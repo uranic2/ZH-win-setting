@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File temp-files.ps1

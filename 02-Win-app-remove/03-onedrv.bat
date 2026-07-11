@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File one-drive.ps1

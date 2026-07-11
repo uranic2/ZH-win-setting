@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File app-remove.ps1
