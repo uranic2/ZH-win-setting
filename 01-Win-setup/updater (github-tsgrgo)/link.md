@@ -1,0 +1,1 @@
+https://github.com/tsgrgo/windows-update-disabler/releases
