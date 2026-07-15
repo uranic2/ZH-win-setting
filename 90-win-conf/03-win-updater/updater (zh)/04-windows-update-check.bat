@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File wup-check.ps1

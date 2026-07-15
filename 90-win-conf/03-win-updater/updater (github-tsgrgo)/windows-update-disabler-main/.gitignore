@@ -1,0 +1,3 @@
+/use update service.bat
+/disable updates.bat
+/PsExec.exe
