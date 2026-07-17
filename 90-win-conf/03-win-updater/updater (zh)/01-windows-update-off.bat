@@ -1,1 +1,1 @@
-powershell -ExecutionPolicy Bypass -File win-update.ps1
+powershell -ExecutionPolicy Bypass -File win-update-off.ps1
