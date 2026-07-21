@@ -1,2 +1,1 @@
-powershell -ExecutionPolicy Bypass -File 7Zip4PowerShell.ps1
-powershell -ExecutionPolicy Bypass -File farupdate.ps1
+start powershell -NoExit -ExecutionPolicy Bypass -File %~n0.ps1
