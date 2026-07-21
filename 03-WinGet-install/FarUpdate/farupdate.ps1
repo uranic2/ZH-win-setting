@@ -65,7 +65,7 @@ if (Test-Path $versionFile) {
     
     if ($localVersionClean -eq $remoteVersionClean) {
         Write-Host "   Уже установлена последняя версия ($localVersionClean). Пропускаем обновление." -ForegroundColor Green
-        Read-Host "Нажмите Enter для выхода"
+        Start-Sleep -Seconds 2
         exit 0
     } else {
         Write-Host "   Текущая версия: $localVersionClean. Доступно обновление до: $remoteVersionClean" -ForegroundColor Yellow
@@ -228,4 +228,10 @@ if (Test-Path $shortcutPath) {
 # 12. Завершение
 # ============================================================
 Write-Host "`nСкрипт завершен." -ForegroundColor Cyan
-Read-Host "Нажмите Enter для выхода"
+
+if ($LASTEXITCODE -eq 0) {
+    exit
+} else {
+
+    Read-Host "Нажмите Enter для выхода"
+}
