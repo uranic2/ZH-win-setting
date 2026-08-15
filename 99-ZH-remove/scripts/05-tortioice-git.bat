@@ -1,1 +1,2 @@
+rem 
 powershell -ExecutionPolicy Bypass -File %~n0.ps1
