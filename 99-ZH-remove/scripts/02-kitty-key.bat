@@ -1,0 +1,1 @@
+rd C:\WinApp\Kitty\Key /S/Q

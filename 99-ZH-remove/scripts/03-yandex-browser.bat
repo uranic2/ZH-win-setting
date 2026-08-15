@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File "03-yandex-browser-clear.ps1"
