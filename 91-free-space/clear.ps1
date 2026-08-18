@@ -1,34 +1,34 @@
-#При обновлении программ Windows сохраняет старые инсталляторы. Со временем папка C:\Windows\Installer забивается мусором.
+п»ї#РџСЂРё РѕР±РЅРѕРІР»РµРЅРёРё РїСЂРѕРіСЂР°РјРј Windows СЃРѕС…СЂР°РЅСЏРµС‚ СЃС‚Р°СЂС‹Рµ РёРЅСЃС‚Р°Р»Р»СЏС‚РѕСЂС‹. РЎРѕ РІСЂРµРјРµРЅРµРј РїР°РїРєР° C:\Windows\Installer Р·Р°Р±РёРІР°РµС‚СЃСЏ РјСѓСЃРѕСЂРѕРј.
 DISM.exe /Online /Cleanup-Image /StartComponentCleanup /ResetBase
-Write-Host 'старые инсталляторы успешно удалены!' -ForegroundColor Green
+Write-Host 'СЃС‚Р°СЂС‹Рµ РёРЅСЃС‚Р°Р»Р»СЏС‚РѕСЂС‹ СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅС‹!' -ForegroundColor Green
 
-#Кэш оптимизации доставки (Delivery Optimization)
+#РљСЌС€ РѕРїС‚РёРјРёР·Р°С†РёРё РґРѕСЃС‚Р°РІРєРё (Delivery Optimization)
 Delete-DeliveryOptimizationCache -Force -IncludePinnedFiles
 Stop-Service -Name "DoSvc" -Force
 Remove-Item -Path "$env:WINDIR\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Start-Service -Name "DoSvc"
 
-# 1. Удаление полных дампов памяти ядра (BSOD)
+# 1. РЈРґР°Р»РµРЅРёРµ РїРѕР»РЅС‹С… РґР°РјРїРѕРІ РїР°РјСЏС‚Рё СЏРґСЂР° (BSOD)
 Remove-Item -Path "$env:SystemRoot\MEMORY.DMP" -Force -ErrorAction SilentlyContinue
 
-# 2. Удаление минидампов (малых дампов ошибок)
+# 2. РЈРґР°Р»РµРЅРёРµ РјРёРЅРёРґР°РјРїРѕРІ (РјР°Р»С‹С… РґР°РјРїРѕРІ РѕС€РёР±РѕРє)
 Remove-Item -Path "$env:SystemRoot\Minidump\*" -Recurse -Force -ErrorAction SilentlyContinue
 
-# 3. Удаление системных отчетов об ошибках (Windows Error Reporting)
+# 3. РЈРґР°Р»РµРЅРёРµ СЃРёСЃС‚РµРјРЅС‹С… РѕС‚С‡РµС‚РѕРІ РѕР± РѕС€РёР±РєР°С… (Windows Error Reporting)
 Remove-Item -Path "$env:ALLUSERSPROFILE\Microsoft\Windows\WER\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item -Path "$env:LOCALAPPDATA\CrashDumps\*" -Recurse -Force -ErrorAction SilentlyContinue
 
 
-Write-Host 'Дампы и отчеты об ошибках успешно удалены!' -ForegroundColor Green
+Write-Host 'Р”Р°РјРїС‹ Рё РѕС‚С‡РµС‚С‹ РѕР± РѕС€РёР±РєР°С… СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅС‹!' -ForegroundColor Green
 
 pnputil /delete-driver * /uninstall /force
-Write-Host 'Старые драйвера успешно удалены!' -ForegroundColor Green
+Write-Host 'РЎС‚Р°СЂС‹Рµ РґСЂР°Р№РІРµСЂР° СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅС‹!' -ForegroundColor Green
 
 Remove-Item -Path "C:\Windows\Logs\CBS\*" -Recurse -Force -ErrorAction SilentlyContinue
-Write-Host 'Логи системных компонентов (CBS Logs) успешно удалены!' -ForegroundColor Green
+Write-Host 'Р›РѕРіРё СЃРёСЃС‚РµРјРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ (CBS Logs) СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅС‹!' -ForegroundColor Green
 
 
 Remove-Item -Path "$env:LOCALAPPDATA\CrashDumps\*" -Recurse -Force -ErrorAction SilentlyContinue
-Write-Host 'Логи сторонних программ (AppData\Local\CrashDumps) успешно удалены!' -ForegroundColor Green
+Write-Host 'Р›РѕРіРё СЃС‚РѕСЂРѕРЅРЅРёС… РїСЂРѕРіСЂР°РјРј (AppData\Local\CrashDumps) СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅС‹!' -ForegroundColor Green
 
 
