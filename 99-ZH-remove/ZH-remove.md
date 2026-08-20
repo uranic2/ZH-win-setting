@@ -6,3 +6,5 @@
  Английский QWERTY, Русский Яцукен
 4. Если студентам, то подключения к БД
 5. delete C:\WinApp\Kitty\Key
+6. Aurora
+7. Codex
