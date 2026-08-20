@@ -1,4 +1,4 @@
-﻿$Languages = New-WinUserLanguageList "en-US"
+$Languages = New-WinUserLanguageList "en-US"
 $Languages[0].InputMethodTips.Clear()
 $Languages[0].InputMethodTips.Add("0409:00000409")
 

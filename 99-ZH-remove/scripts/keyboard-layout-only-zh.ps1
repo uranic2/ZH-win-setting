@@ -1,4 +1,6 @@
-﻿$LayoutsPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layouts"
+#Скрипт найдёт ранее установленные пользовательские раскладки по их названиям, включит только их и удалит остальные из списка текущего пользователя:
+
+$LayoutsPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layouts"
 
 function Find-KeyboardLayout {
     param(
